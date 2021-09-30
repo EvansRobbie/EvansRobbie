@@ -1,0 +1,186 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>signup</title>
+
+<!--https://getbootstrap.com/-->
+    <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/bootstrap@4.6.0/dist/css/bootstrap.min.css" integrity="sha384-B0vP5xmATw1+K9KRQjQERJvTumQW0nPEzvF6L/Z6nronJ3oUOFUFpCjEUQouq2+l" crossorigin="anonymous">
+<!--for icons in the fontawesome css-->
+     <script src="https://kit.fontawesome.com/f8ca3d18f3.js" crossorigin="anonymous"></script>
+</head>
+<body>
+<!--  colors: primary, dark(black), danger(red),success(green),info(light blue), warning(orange),white, secondary-->
+<!--https://hackerthemes.com/bootstrap-cheatsheet/-->
+<!--nav bar-->
+
+<section class="row bg-warning" style="padding-top:3%;padding-left:3%;padding-right:3%;">
+    <div class="col-md-12">
+        <nav class="navbar navbar-expand-lg navbar-light bg-light">
+              <a class="navbar-brand" href="#">
+                  <img src="../static/logo.png" alt="" width="150" height="50">
+              </a>
+              <button class="navbar-toggler" type="button" data-toggle="collapse" data-target="#navbarSupportedContent" aria-controls="navbarSupportedContent" aria-expanded="false" aria-label="Toggle navigation">
+                <span class="navbar-toggler-icon"></span>
+              </button>
+
+              <div class="collapse navbar-collapse" id="navbarSupportedContent">
+                <ul class="navbar-nav mr-auto">
+                  <li class="nav-item active">
+                    <a class="nav-link text-info" href="/">Home <span class="sr-only">(current)</span></a>
+                  </li>
+                  <li class="nav-item">
+                    <a class="nav-link text-info" href="#">Accessories</a>
+                  </li>
+                    <!--https://codepen.io/gota/pen/ZVKMLz-->
+                    <style>
+                        .dropdown:hover>.dropdown-menu{display:block;
+                        }
+                        .dropdown>.dropdown-toggle:active {
+                              /*Without this, clicking will make it sticky*/
+                                // pointer-events: none;
+                            }
+                    </style>
+                  <li class="nav-item dropdown">
+                    <a class="nav-link dropdown-toggle text-info" href="#"
+                    id="navbardrop" data-toggle="dropdown">Electronics</a>
+                      <div class="dropdown-menu">
+                          <a href="" class="dropdown-item">TV screen</a>
+                          <a href="" class="dropdown-item">smartphons</a>
+                          <a href="" class="dropdown-item">Cookers</a>
+                          <a href="" class="dropdown-item">KItchen Appliances</a>
+
+                      </div>
+                  </li>
+                </ul>
+                <form class="form-inline my-2 my-lg-0">
+                  <input class="form-control mr-sm-2" type="text" placeholder="Search" aria-label="Search">
+                  <button class="btn btn-outline-success my-2 my-sm-0" type="submit">Search</button>
+                </form>
+                  <ul>
+                      <li class="nav-item dropdown">
+                    <a class="nav-link dropdown-toggle text-info" href="#"
+                    id="navbardrop1" data-toggle="dropdown">
+                        <i class="fas fa-user"></i></a>
+                      <div class="dropdown-menu">
+                          <a href="/signin" class="dropdown-item">Sign In</a>
+                          <a href="/signup" class="dropdown-item">Sign Up</a>
+                      </div>
+                    </li>
+                  </ul>
+              </div>
+            </nav>
+
+    </div>
+
+</section>
+<div class="container">
+    <br>
+    <section class="row">
+        <div class="col-md-7">
+            <img src="../static/food4.jpg" alt="" class="image-fluid" width="100%">
+
+        </div>
+        <div class="col-md-5">
+            <form action="">
+                <h3>SIGNUP</h3>
+                <input type="name" class="form-control" placeholder="Enter your Name">
+                <br>
+                <input type="email" class="form-control" placeholder="Your Email">
+                <br>
+                <input type="Password" class="form-control" placeholder="Your password">
+                <br>
+                <input type="Password" class="form-control" placeholder=" Confirm Your password">
+                <br>
+                <input type="submit" value="Sign Up" class="btn btn-warning">
+            </form>
+            <br>
+            <a href="/signin">Already have an Account? Login</a><br>
+
+
+        </div>
+
+    </section>
+<hr>
+    <section class="row">
+        <div class="col-md-4">
+            <h4>SHOES LIMITED</h4>
+            <P class="text-muted">We are a medium sized company focusing on selling a wide range of products <br>
+            <b>Email</b><i>info@shoelimited.com</i><br>
+                <b>TEL:</b><i>254 04 563 123</i><br>
+                <b>Follow us on;</b><br>
+                <a href="">
+                    <i class="fab fa-twitter" style="font-size:40px;"></i>
+                </a>
+                <a href="">
+                    <i class="fab fa-facebook" style="font-size:40px; color:#01579B;"></i>
+                </a>
+                <a href="">
+                    <i class="fab fa-youtube" style="font-size:40px; color:#D50000;"></i>
+                </a>
+                <a href="">
+                    <i class="fab fa-google-play" style="font-size:40px; color:#1DE986;"></i>
+                </a>
+            </P>
+
+        </div>
+        <div class="col-md-4">
+            <i class="far fa-clock" style="font-size:40px; color:orange;"></i>
+            <b class="text-muted">We are open 9.00 AM - 5.00 PM weekdays, 9.00 AM - 12 PM Weekends</b>
+            <b class="text-muted">We remain closed on Public Holidays</b><br>
+            <i class="fas fa-phone"style="font-size:40px; color:orange;"></i>
+            <b class="text-muted">Customer Care</b><br>
+            <b>+254 704563123</b><br>
+            <b>+254 745000000</b><br>
+            <b>+254 745000000</b>
+
+        </div>
+        <div class="col-md-4">
+            <i class="fas fa-user-friends" style="font-size:40px; color:orange;"></i><br>
+            <b class="text-warning">Subscribe Newsletter</b><br>
+            <p class="text-muted">Subscribe to our newsletter to recieve special offers</p>
+            <form action="">
+                <input type="email" placeholder="Your email">
+                <input type="Submit" placeholder="btn btn-warning" value="send">
+            </form>
+            <b>We accept</b><br>
+            <i class="fab fa-cc-visa" style="font-size:30px;"></i>
+            <i class="fab fa-cc-paypal" style="font-size:30px;"></i>
+            <i class="fab fa-cc-mastercard" style="font-size:30px;"></i>
+            <img src="../static/mpesa.png" alt="" width="30%">
+            <img src="../static/airtel.jpg" alt="" width="30%">
+
+
+
+
+        </div>
+
+    </section>
+</div>
+<!--copyright,yens,thing that are not on the keyboard[entitie]W3schools-->
+<footer class="row" style="background:orange; color:white; text-align:center; padding:1%">
+    <div class="col-md-12">
+        <b>copyright &copy;2021 - All rights reserved</b>
+        <i>Customer Care: +254704563123</i>
+    </div>
+
+</footer>
+
+
+
+
+
+
+
+
+
+
+
+
+
+<script src="https://code.jquery.com/jquery-3.5.1.slim.min.js" integrity="sha384-DfXdz2htPH0lsSSs5nCTpuj/zy4C+OGpamoFVy38MVBnE+IbbVYUew+OrCXaRkfj" crossorigin="anonymous"></script>
+<script src="https://cdn.jsdelivr.net/npm/bootstrap@4.6.0/dist/js/bootstrap.bundle.min.js" integrity="sha384-Piv4xVNRyMGpqkS2by6br4gNJ7DXjqk09RmUpJ8jgGtD7zP9yug3goQfGII0yAns" crossorigin="anonymous"></script>
+
+</head>
+</body>
+</html>

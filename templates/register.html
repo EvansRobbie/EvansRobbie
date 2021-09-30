@@ -1,0 +1,61 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Register</title>
+        <!--https://getbootstrap.com/-->
+    <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/bootstrap@4.6.0/dist/css/bootstrap.min.css" integrity="sha384-B0vP5xmATw1+K9KRQjQERJvTumQW0nPEzvF6L/Z6nronJ3oUOFUFpCjEUQouq2+l" crossorigin="anonymous">
+<!--for icons in the fontawesome css-->
+    <script src="https://kit.fontawesome.com/f8ca3d18f3.js" crossorigin="anonymous"></script>
+</head>
+<body>
+<!--navbar was removed from here-->
+{% include 'navbar.html' %}
+<div class="container">
+    <h4>Create Account</h4>
+    <section class="row">
+        <div class="col-md-6">
+            {{password}}
+            {{phone}}
+            {{success}}
+            {{error}}
+
+            <!-- below all inputs will be posted to/register route, user must click the button-->
+            <form action="/register" method="post">
+                <input type="text" name="customer_fname" placeholder="Your First Name" class="form-control" required>
+                <br>
+                <input type="text" name="customer_lname" placeholder="your last Name" class="form-control" required>
+                <br>
+                <input type="text" name="customer_surname" placeholder="Your Surname" class="form-control" required>
+                <br>
+                <input type="tel" name="customer_phone" placeholder="Your Phone No." class="form-control" required>
+                <br>
+                <input type="email" name="customer_email" placeholder="Your Email" class="form-control" required>
+                <br>
+        </div>
+        <div class="col-md-6">
+
+                <input type="password" name="customer_password" placeholder="Your Password" class="form-control" required>
+                <br>
+                <input type="password" name="customer_password2" placeholder="Confirm your Password" class="form-control" required>
+                <br>
+            <label for="">Gender</label><br>
+            <input type="radio" name="customer_gender" checked>Male
+            <input type="radio" name="customer_gender">Female
+            <br>
+            <label for="">Your Address</label><br>
+            <textarea name="customer_address" id="" cols="40" rows="2" required></textarea><br>
+            <label for="">Your DOB</label>
+            <input type="date" name="dob" required> <br><br>
+
+            <input type="submit" value="Register" class="btn btn-success">
+
+            </form>
+
+        </div>
+
+    </section>
+</div>
+{% include 'footer.html' %}
+</body>
+</html>

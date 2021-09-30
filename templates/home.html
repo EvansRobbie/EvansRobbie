@@ -1,0 +1,294 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Home</title>
+<!--https://getbootstrap.com/-->
+    <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/bootstrap@4.6.0/dist/css/bootstrap.min.css" integrity="sha384-B0vP5xmATw1+K9KRQjQERJvTumQW0nPEzvF6L/Z6nronJ3oUOFUFpCjEUQouq2+l" crossorigin="anonymous">
+<!--for icons in the fontawesome css-->
+    <script src="https://kit.fontawesome.com/f8ca3d18f3.js" crossorigin="anonymous"></script>
+</head>
+<body>
+<!--  colors: primary, dark(black), danger(red),success(green),info(light blue), warning(orange),white, secondary-->
+<!--https://hackerthemes.com/bootstrap-cheatsheet/-->
+<!--nav bar was removed from here-->
+{% include 'navbar.html' %}
+<!--carousel-->
+<section class="row">
+    <div class="col-md-12">
+        <div class="bd-example">
+              <div id="carouselExampleCaptions" class="carousel slide pointer-event" data-ride="carousel">
+                <ol class="carousel-indicators">
+                  <li data-target="#carouselExampleCaptions" data-slide-to="0" class="active"></li>
+                  <li data-target="#carouselExampleCaptions" data-slide-to="1"></li>
+                    <li data-target="#carouselExampleCaptions" data-slide-to="2"></li>
+                </ol>
+                <div class="carousel-inner" role="listbox">
+                  <div class="carousel-item active">
+                      <img class="d-block w-100" src="../static/slide1.jpg" alt="">
+                  </div>
+                  <div class="carousel-item">
+                      <img class="d-block w-100" src="../static/slide2.jpg" alt="">
+                </div>
+                     <div class="carousel-item">
+                      <img class="d-block w-100" src="../static/slide3.jpg" alt="">
+                     </div>
+                <a class="carousel-control-prev" href="#carouselExampleCaptions" role="button" data-slide="prev">
+                    <i class ="fas fa-angle-left" aria-hidden="true" style="color:orange; font-size:30px"></i>
+                  <span class="sr-only">Previous</span>
+                </a>
+                <a class="carousel-control-next" href="#carouselExampleCaptions" role="button" data-slide="next">
+                  <i class ="fas fa-angle-right" aria-hidden="true" style="color:orange; font-size:30px"></i>
+                  <span class="sr-only">Next</span>
+                </a>
+              </div>
+            </div>
+
+
+    </div>
+
+</section>
+<br>
+<div class="container">
+   <h3>ABOUT US</h3>
+    <section class="row">
+        <div class="col-md-8">
+            <h4 class="bg-info text-white">Welcome to Shoes ltd</h4>
+            <p class="text-muted">Lorem ipsum doloiam autem consequuntur, error et ex, fugiat harum itaque laborum nobis nostrum pariatur soluta sunt temporibus ut? Autem beatae iure quia!</p>
+            <h4>Our Client</h4>
+            <p class="text-muted">Lorem ipsum dolor sit amet,s inventore iusto laudantium libero obcaecati quasi quia quisquam recusandae tenetur ullam, vitae!</p>
+            <a href="" class="btn btn-outline-info">Read More</a>
+        </div>
+
+        <div class="col-md-4">
+            <img src="../static/pic3.jpg" alt="" class="img-fluid">
+        </div>
+
+    </section>
+    <br>
+<!-- 2nd section-->
+    <h3>WHAT WE DO </h3>
+    <section class="row">
+        <div class="col-md-4">
+            <h5>Sports shoes</h5>
+            <img src="../static/pic1.jpg" alt="" class="img-fluid" width="70%">
+            <p>Lorem ipsum dolor sit amet, consectetur adipisicing elit. Ad animi voluptatibus?</p>
+            <a href="" class="btn btn-info">Read more</a>
+        </div>
+
+        <div class="col-md-4">
+            <h5>Girls wear</h5>
+            <img src="../static/boots.jpg" alt="" class="img-fluid" width="70%">
+            <p>Lorem ipsum dolor sit amet, consectetur adipisicing elit. Aliasculpa cumque dolore facilis fugit illum iure neque porro quam quas labore molestiae nisi repellendus!</p>
+            <a href="" class="btn btn-info">Read more</a>
+
+        </div>
+
+        <div class="col-md-4">
+            <h5>kids wear</h5>
+            <img src="../static/kids1.jpg" alt="" class="img-fluid" width="70%">
+            <p>Lorem ipsum dolor sit amet, consectetur adipisicing elit. Ab asperiores au Dolores?</p>
+            <a href="" class="btn btn-info">Read more</a>
+
+        </div>
+
+    </section>
+     <br>
+        <h4>Trending</h4>
+    <section class="row">
+        <div class="col-md-3">
+            <div class="card">
+                <img src="../static/pic4.jpg" alt="" class="img-fluid">
+                <div class="card-body">
+                    <p class="text-muted">Men sports shoe, get the offer before the stock lasts..</p>
+                    <strike class="text-muted">Ksh 1,750</strike>
+                    <b class="text-danger">Ksh 1,500</b><br>
+                    <a href=""class="btn btn-info">Buy now</a>
+                    <a href="">60% OFF</a>
+
+                </div>
+
+            </div>
+
+        </div>
+           <div class="col-md-3">
+            <div class="card">
+                <img src="../static/ladies1.jpg" alt="" class="img-fluid">
+                <div class="card-body">
+                    <p class="text-muted">Ladies shoe wear, get the offer before the stock lasts..</p>
+                    <strike class="text-muted">Ksh 1,450</strike>
+                    <b class="text-danger">Ksh 1,000</b><br>
+                    <a href=""class="btn btn-info">Buy now</a>
+
+                </div>
+
+            </div>
+
+        </div>
+           <div class="col-md-3">
+            <div class="card">
+                <img src="../static/sandal1.jpg" alt="" class="img-fluid">
+                <div class="card-body">
+                    <p class="text-muted">Men sandles, get the offer before the stock lasts..</p>
+                    <strike class="text-muted">Ksh 1,150</strike>
+                    <b class="text-danger">Ksh 1,000</b><br>
+                    <a href=""class="btn btn-info">Buy now</a>
+
+                </div>
+
+            </div>
+
+        </div>
+
+           <div class="col-md-3">
+            <div class="card">
+                <img src="../static/kids1.jpg" alt="" class="img-fluid">
+                <div class="card-body">
+                    <p class="text-muted">kids shoes, get the offer before the stock lasts..</p>
+                    <strike class="text-muted">Ksh 750</strike>
+                    <b class="text-danger">Ksh 500</b><br>
+                    <a href=""class="btn btn-info">Buy now</a>
+
+                </div>
+
+            </div>
+
+        </div>
+
+    </section>
+    <br>
+    <h4>Best Selling Smartphones &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;
+    <a href=""class="btn btn-warning text-white" >VIEW ALL</a>
+    </h4>
+    <section class="row">
+        <div class="col-md-3">
+            <div class="card">
+                <img src="../static/oppo.jpg" alt="" class="image-fluid">
+                <div class="card-body">
+                    <p><b>Oppo A15: 6.52 Inches, 3GB RA...</b><br>
+                   <b class="text-info">KSh 14480</b>
+                        <strike class="text-muted">KSh 18000</strike><br>
+                        <p class="alert-secondary">Upto to 19% off</p>
+                    </p>
+
+
+
+                </div>
+
+
+            </div>
+
+
+        </div>
+        <div class="col-md-3">
+            <div class="card">
+                <img src="../static/itel.jpg" alt="" class="image-fluid">
+                <div class="card-body">
+                    <p><b>Itel A37 ANDROID 10,(16+1)GB...</b><br>
+                    <b class="text-info">KSh 7800</b>
+                        <strike class="text-muted">KSh 8500</strike><br>
+                     <p class="alert-secondary">Upto to 8% OFF</p>
+                    </p>
+
+                </div>
+            </div>
+
+
+        </div>
+        <div class="col-md-3">
+            <div class="card">
+                <img src="../static/tecno.jpg" alt="" class="image-fluid">
+                <div class="card-body">
+                    <p><b>Tecno spark GO 2020:6.52 inc...</b><br>
+                    <b class="text-info"> KSh10100</b>
+                    <strike class="text-muted">14000</strike><br>
+                    <p class="alert-secondary">Upto to 27% OFF</p>
+                    </p>
+                </div>
+
+            </div>
+
+        </div>
+        <div class="col-md-3">
+            <div class="card">
+                <img src="../static/infinix.jpg" alt="" class="image fluid">
+
+                <div class="card-body">
+                    <p><b>Infinix Hot 10 T:6.82 Inches,6...</b><br>
+                     <b class="text-info">14250</b>
+                    <strike class="text-muted">17000</strike>
+                    <p class="alert-secondary">Upto to 27% OFF</p>
+                    </p>
+                </div>
+            </div>
+
+        </div>
+
+
+
+    </section>
+    <br>
+    <hr>
+    <section class="row">
+        <div class="col-md-4">
+            <h4>SHOES LIMITED</h4>
+            <P class="text-muted">We are a medium sized company focusing on selling a wide range of products <br>
+            <b>Email</b><i>info@shoelimited.com</i><br>
+                <b>TEL:</b><i>254 04 563 123</i><br>
+                <b>Follow us on;</b><br>
+                <a href="">
+                    <i class="fab fa-twitter" style="font-size:40px;"></i>
+                </a>
+                <a href="">
+                    <i class="fab fa-facebook" style="font-size:40px; color:#01579B;"></i>
+                </a>
+                <a href="">
+                    <i class="fab fa-youtube" style="font-size:40px; color:#D50000;"></i>
+                </a>
+                <a href="">
+                    <i class="fab fa-google-play" style="font-size:40px; color:#1DE986;"></i>
+                </a>
+            </P>
+
+        </div>
+        <div class="col-md-4">
+            <i class="far fa-clock" style="font-size:40px; color:#039dfc;"></i>
+            <b class="text-muted">We are open 9.00 AM - 5.00 PM weekdays, 9.00 AM - 12 PM Weekends</b>
+            <b class="text-muted">We remain closed on Public Holidays</b><br>
+            <i class="fas fa-phone"style="font-size:40px; color:#039dfc;"></i>
+            <b class="text-muted">Customer Care</b><br>
+            <b>+254 704563123</b><br>
+            <b>+254 745000000</b><br>
+            <b>+254 745000000</b>
+
+        </div>
+        <div class="col-md-4">
+            <i class="fas fa-user-friends" style="font-size:40px; color:#039dfc;"></i><br>
+            <b class="text-info">Subscribe Newsletter</b><br>
+            <p class="text-muted">Subscribe to our newsletter to recieve special offers</p>
+            <form action="">
+                <input type="email" placeholder="Your email">
+                <input type="Submit" placeholder="btn btn-warning" value="send">
+            </form>
+            <b>We accept</b><br>
+            <i class="fab fa-cc-visa" style="font-size:30px;"></i>
+            <i class="fab fa-cc-paypal" style="font-size:30px;"></i>
+            <i class="fab fa-cc-mastercard" style="font-size:30px;"></i>
+            <img src="../static/mpesa.png" alt="" width="30%">
+            <img src="../static/airtel.jpg" alt="" width="30%">
+
+
+
+
+        </div>
+
+    </section>
+</div>
+
+<!--footer was removed here-->
+{% include 'footer.html' %}
+
+<script src="https://code.jquery.com/jquery-3.5.1.slim.min.js" integrity="sha384-DfXdz2htPH0lsSSs5nCTpuj/zy4C+OGpamoFVy38MVBnE+IbbVYUew+OrCXaRkfj" crossorigin="anonymous"></script>
+<script src="https://cdn.jsdelivr.net/npm/bootstrap@4.6.0/dist/js/bootstrap.bundle.min.js" integrity="sha384-Piv4xVNRyMGpqkS2by6br4gNJ7DXjqk09RmUpJ8jgGtD7zP9yug3goQfGII0yAns" crossorigin="anonymous"></script>
+</body>
+</html>

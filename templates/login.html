@@ -1,0 +1,41 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Login</title>
+    <!--https://getbootstrap.com/-->
+    <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/bootstrap@4.6.0/dist/css/bootstrap.min.css" integrity="sha384-B0vP5xmATw1+K9KRQjQERJvTumQW0nPEzvF6L/Z6nronJ3oUOFUFpCjEUQouq2+l" crossorigin="anonymous">
+<!--for icons in the fontawesome css-->
+    <script src="https://kit.fontawesome.com/f8ca3d18f3.js" crossorigin="anonymous"></script>
+</head>
+<body>
+<!-- navbar was removed from here-->
+{% include 'navbar.html' %}
+    <div class="container">
+        <section class="row">
+            <div class="col-md-4">
+                <!-- action means after submit form goes to /login route-->
+                <!--the /login route would receive email and password posted-->
+                <h3>LOGIN</h3>
+                <form action="/login" method="post">
+                    <input type="email" name="email" placeholder="Your Email" class="form-control">
+                    <br>
+                    <input type="password" name="password" placeholder="Your Password" class="form-control">
+                    <br>
+                    <input type="submit" value="login" class="btn btn-success">
+                </form>
+                <br>
+                <b style="color:red;">{{error}}</b>
+                <b style="color:green;">{{success}}</b>
+                <a href="">New User?, Create Account</a>
+            </div>
+            <div class="col-md-8">
+                <img src="../static/infinix.jpg" alt="" class="img-fluid">
+            </div>
+
+        </section>
+    </div>
+<!--footer was removed from here-->
+{% include 'footer.html' %}
+</body>
+</html>

@@ -1,0 +1,73 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Navbar</title>
+    <!--https://getbootstrap.com/-->
+    <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/bootstrap@4.6.0/dist/css/bootstrap.min.css" integrity="sha384-B0vP5xmATw1+K9KRQjQERJvTumQW0nPEzvF6L/Z6nronJ3oUOFUFpCjEUQouq2+l" crossorigin="anonymous">
+<!--for icons in the fontawesome css-->
+    <script src="https://kit.fontawesome.com/f8ca3d18f3.js" crossorigin="anonymous"></script>
+<!--https://codepen.io/gota/pen/ZVKMLz-->
+    <style>
+        .dropdown:hover>.dropdown-menu{display:block;
+        }
+        .dropdown>.dropdown-toggle:active {
+              /*Without this, clicking will make it sticky*/
+                // pointer-events: none;
+            }
+    </style>
+</head>
+<body>
+       <section class="row bg-info" style="padding-top:3%;padding-left:3%;padding-right:3%;">
+    <div class="col-md-12">
+        <nav class="navbar navbar-expand-lg navbar-light bg-light">
+              <a class="navbar-brand" href="#">
+                  <img src="../static/logo.png" alt="" width="150" height="50">
+              </a>
+              <button class="navbar-toggler" type="button" data-toggle="collapse" data-target="#navbarSupportedContent" aria-controls="navbarSupportedContent" aria-expanded="false" aria-label="Toggle navigation">
+                <span class="navbar-toggler-icon"></span>
+              </button>
+
+              <div class="collapse navbar-collapse" id="navbarSupportedContent">
+                <ul class="navbar-nav mr-auto">
+                  <li class="nav-item active">
+                    <a class="nav-link text-info" href="/">Home <span class="sr-only">(current)</span></a>
+                  </li>
+                  <li class="nav-item">
+                    <a class="nav-link text-info" href="/shoes">Shoes</a>
+                  </li>
+                    <li class="nav-item">
+                    <a class="nav-link text-info" href="/contact">ContactUs</a>
+                  </li>
+                  <li class="nav-item dropdown">
+                    <a class="nav-link dropdown-toggle text-info" href="#"
+                    id="navbardrop" data-toggle="dropdown">Electronics</a>
+                      <div class="dropdown-menu">
+                          <a href="" class="dropdown-item">TV screen</a>
+                          <a href="" class="dropdown-item">smartphons</a>
+                          <a href="" class="dropdown-item">Cookers</a>
+                          <a href="" class="dropdown-item">KItchen Appliances</a>
+
+                      </div>
+                  </li>
+                </ul>
+                <form class="form-inline my-2 my-lg-0">
+                  <input class="form-control mr-sm-2" type="text" placeholder="Search" aria-label="Search">
+                  <button class="btn btn-outline-success my-2 my-sm-0" type="submit">Search</button>
+                </form>
+              </div> &nbsp;&nbsp;&nbsp;
+<!--https://www.ordinarycoders.com/user-login-logout-->
+             {% if session.user %}
+                <a class="text-dark" href="/logout"> Logout</a>
+                <a class="btn btn-sm btn-outline-primary m-2"  href=" ">{{session.user}}</a>
+             {% else %}
+                <a class="text-dark" href="/login">Login</a>
+                <a class="btn btn-sm btn-primary m-2"  href="/register">Register</a>
+             {% endif %}
+            </nav>
+
+    </div>
+
+</section>
+</body>
+</html>

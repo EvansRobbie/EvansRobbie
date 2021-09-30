@@ -1,0 +1,107 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Online shop</title>
+    <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/bootstrap@4.6.0/dist/css/bootstrap.min.css" integrity="sha384-B0vP5xmATw1+K9KRQjQERJvTumQW0nPEzvF6L/Z6nronJ3oUOFUFpCjEUQouq2+l" crossorigin="anonymous">
+<!--for icons in the fontawesome css-->
+    <script src="https://kit.fontawesome.com/f8ca3d18f3.js" crossorigin="anonymous"></script>
+</head>
+<body>
+<!--navbar was removed from here-->
+{% include 'navbar.html' %}
+    <div class="container">
+        {{msg}}
+            <section class="row">
+                <div class="col-md-4" style="padding:2%;">
+                    <img src="../static/{{row[12]}}" alt="" class="img-fluid">
+                </div>
+                <div class="col-md-5 " style="padding:2%">
+                    <span style="color:grey;">Brand</span>
+                    <span style="color:orange;"><b>{{row[10]}}</b></span>
+                    <br>
+                    <br>
+                    <h5><b>{{row [2]}}</b></h5>
+                    <span style="color:grey;">Category</span>
+                    <span style="color:orange;"><b>{{row[11]}}</b></span>
+                    <br><br>
+                    <b>Description</b>
+                    <p style="color:grey;">{{row[4]}}</p>
+
+                    <span style="color:grey;">Size</span>
+                    <span style="color:orange;"><b>{{row[8]}}</b></span>
+                    <br>
+
+                    <span style="color:grey;">Color</span>
+                    <span style="color:orange;"><b>{{row[9]}}</b></span>
+
+                </div>
+                    <div class="col-md-3" style="padding:2%;">
+                        <div class="card">
+                            <div class="card-body">
+                                <h5><b style="color:orange;">Ksh{{row[7]}}</b></h5>
+                                <span style="color:grey;"><strike>Ksh{{row[6]}}</strike></span>
+                                <br>
+                                <b class="badge badge-warning">20% Discount</b> <br><br>
+
+                                {% if session.user %}
+                                <b>Want to pay? Enter your phone below</b><br>
+                                <form action="/mpesa_payment " method="post">
+                                    <label for="">Please enter the Quantity</label><br>
+                                    <input type="number" name="quantity" class="form-control"><br>
+                                    <input type="tel" name="phone" placeholder="Your phone +254.." required><br>
+                                    <input type="hidden" value="{{row[7]}}" name="amount" required >
+                                    <input type="hidden" value="{{row[0]}}" name="product_id" required ><br>
+                                    <input type="submit" value="Pay Now" class="btn btn-info">
+
+                                </form>
+                                {% else %}
+                                    Login to make payment <a href="/login">Here</a>
+                                {% endif %}
+                                <b>ESTIMATED DELIVERY TIME</b> <br>
+                                <span>2 to 5 Business working days</span>
+                            </div>
+                        </div>
+                    </div>
+
+            </section>
+    {% if session.user %}
+        <a href="/logout">Logout</a>
+        <br>
+        {% with messages = get_flashed_messages() %}
+          {% if messages %}
+            <ul class=flashes>
+            {% for message in messages %}
+              <li class="text-info">{{ message }}</li>
+            {% endfor %}
+            </ul>
+          {% endif %}
+        {% endwith %}
+
+        <section class="row">
+            <div class="col-md-6">
+                <form action="/reviews" method="post">
+                    <h4>Write a Review</h4>
+                    <input type="hidden" value="{{session.user}}" name="user">
+                    <input type="hidden" value="{{row[0]}}" name="product_id"><br>
+                    <textarea name="message" id="" cols="30" rows="4" class="form-control"></textarea> <br>
+                    <input type="submit" value="Send Review" class="btn btn-success">
+                </form>
+
+            </div>
+        </section>
+    {% else %}
+        <b>Login to post a review <a href="/login">Login Here</a></b>
+    {% endif %}
+        </div>
+
+    </div>
+<hr>
+<!--http://127.0.0.1:5000/single/5-->
+<!--footer was removed from here-->
+{% include 'footer.html' %}
+<script src="https://code.jquery.com/jquery-3.5.1.slim.min.js" integrity="sha384-DfXdz2htPH0lsSSs5nCTpuj/zy4C+OGpamoFVy38MVBnE+IbbVYUew+OrCXaRkfj" crossorigin="anonymous"></script>
+<script src="https://cdn.jsdelivr.net/npm/bootstrap@4.6.0/dist/js/bootstrap.bundle.min.js" integrity="sha384-Piv4xVNRyMGpqkS2by6br4gNJ7DXjqk09RmUpJ8jgGtD7zP9yug3goQfGII0yAns" crossorigin="anonymous"></script>
+
+</body>
+</html>

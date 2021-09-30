@@ -1,0 +1,77 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Dashboard</title>
+    <!--https://getbootstrap.com/-->
+    <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/bootstrap@4.6.0/dist/css/bootstrap.min.css" integrity="sha384-B0vP5xmATw1+K9KRQjQERJvTumQW0nPEzvF6L/Z6nronJ3oUOFUFpCjEUQouq2+l" crossorigin="anonymous">
+<!--for icons in the fontawesome css-->
+    <script src="https://kit.fontawesome.com/f8ca3d18f3.js" crossorigin="anonymous"></script>
+</head>
+<body>
+{% if session.admin %}
+    <h1 class="jumbotron">Admin Dashboard</h1>
+    <div class="container">
+         <b>{{session.admin}}</b>
+         <a href="/adminlogout">logout</a>
+         {% with messages = get_flashed_messages() %}
+          {% if messages %}
+            <ul class=flashes>
+            {% for message in messages %}
+              <li class="text-info">{{ message }}</li>
+            {% endfor %}
+            </ul>
+          {% endif %}
+        {% endwith %}
+        <section class="row">
+            <div class="col-md-2">
+                    <!--bootsstrap side bar-->
+                <sidebar>
+                    <a href="">Reviews</a><br>
+                    <a href="">contacts</a><br>
+                    <a href="">View Products</a>
+                </sidebar>
+
+            </div>
+            <div class="col-md-10">
+                    <!--display all customers-->
+                <h6>Customers</h6>
+                <table class="table">
+                    <tr>
+                        <th>ID</th>
+                        <th>Names</th>
+                        <th>Email</th>
+                        <th>Phone</th>
+                        <th>Gender</th>
+                        <th>Address</th>
+                        <th>Action</th>
+                    </tr>
+
+                    {% for row in rows %}
+                        <tr>
+                            <td>{{row[0]}}</td>
+                            <td>{{row[3]}} {{row[2]}} {{row[1]}}</td>
+                            <td>{{row[4]}}</td>
+                            <td>{{row[5]}}</td>
+                            <td>{{row[7]}}</td>
+                            <td>{{row[8]}}</td>
+                            <td><a href="/customer_del/{{row[0]}}" onclick="return confirm('Are you sure?');">
+                                <i class="fas fa-trash-alt"></i>
+                            </a></td>
+                        </tr>
+
+                    {% endfor %}
+                    {{msg}}
+                </table>
+
+            </div>
+
+        </section>
+
+    </div>
+
+{% else %}
+    login as admin <a href="/admin">Here</a>
+{% endif %}
+</body>
+</html>
